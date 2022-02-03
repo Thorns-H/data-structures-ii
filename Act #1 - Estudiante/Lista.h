@@ -46,28 +46,21 @@ Materia Lista::ConsultarMateria(string nombre){
     }else{ return Vacia; }
 }
 
-void Lista::RemoverMateria(string nombre){
-    Nodo *actual, *anterior;
-    actual = cabecera;
+void Lista::RemoverMateria(string Nombre){
+    Nodo *tmp, *anterior;
+    tmp = cabecera;
 
-    if(this->cabecera){
-        if(actual->Asignatura.getNombre() == nombre){
-            cabecera = cabecera->siguente;
-        }else{
-            while(actual){
-                if(actual->Asignatura.getNombre() == nombre){
-                    anterior = actual;
-                    actual = actual->siguente;
-                    anterior->siguente = actual->siguente; 
-                    
-                    delete actual;
-                    break;
-                }else{
-                    actual = actual->siguente;
-                }
-            } 
+    if(tmp->Asignatura.getNombre() == Nombre){
+        cabecera = cabecera->siguente;
+    }else{
+        while(Nombre != tmp->siguente->Asignatura.getNombre()){
+            tmp = tmp->siguente;
         }
+        anterior = tmp;
+        tmp = tmp->siguente;
+        anterior->siguente = tmp->siguente;
     }
+        delete tmp;
 }
 
 void Lista::MostrarMaterias(){

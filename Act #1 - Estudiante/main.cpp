@@ -16,11 +16,15 @@ int main(){
     Lista Alumno;
     Alumno.Inicializar();
 
-    Materia EDA1("Estructuras I", "EDA1", "Profe no tan barco", "LMI", 13, 15);
-    Materia EDA2("Estructuras II", "EDA2", "Profe barco", "MJ", 11, 13);
+    Materia EDA1("Estructuras I", "EDA1", "Noe", "LMI", 13, 15);
+    Materia EDA2("Estructuras II", "EDA2", "Luis", "MJ", 11, 13);
 
     Alumno.AgregarMateria(EDA2);
     Alumno.AgregarMateria(EDA1);
+    Alumno.MostrarMaterias();
+
+    Alumno.RemoverMateria("Estructuras II");
+
     Alumno.MostrarMaterias();
 
     return 0;
