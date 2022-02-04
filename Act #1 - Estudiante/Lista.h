@@ -7,6 +7,7 @@ class Lista{
         Materia ConsultarMateria(string);
         void RemoverMateria(string);
         void MostrarMaterias();
+        void MostrarMateria(Materia);
     private:
         Nodo *cabecera;
 };
@@ -78,4 +79,10 @@ void Lista::MostrarMaterias(){
     }else{
         std::cout << "\n\t@ERROR: ¡No hay materias registradas!" << std::endl;
     }
+}
+
+void Lista::MostrarMateria(Materia Asignatura){
+    std::cout << "\t\t- " << Asignatura.getNombre() << " (" << Asignatura.getAcronimo() << ")." << std::endl;
+    std::cout << "\n\t - Profesor: " << Asignatura.getProfesor() << std::endl;
+    std::cout << "\t - Dias de la Semana: " << Asignatura.getDias() << " de " << Asignatura.getHoraInicio() << " a " << Asignatura.getHoraFinal() << "hrs.\n" << std::endl;
 }

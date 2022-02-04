@@ -20,12 +20,18 @@ int main(){
     Materia EDA2("Estructuras II", "EDA2", "Luis", "MJ", 11, 13);
 
     Alumno.AgregarMateria(EDA2);
-    Alumno.AgregarMateria(EDA1);
-    Alumno.MostrarMaterias();
+    // Alumno.AgregarMateria(EDA1);
+    // Alumno.MostrarMaterias();
 
-    Alumno.RemoverMateria("Estructuras II");
+    // Alumno.RemoverMateria("Estructuras II");
 
-    Alumno.MostrarMaterias();
+    Materia Consulta = Alumno.ConsultarMateria("Estructuras I");
+
+    if(Consulta.getNombre() == ERROR){
+        std::cout << "\t¡Ha habido un error consultando esa materia!" << std::endl;
+    }else{
+        Alumno.MostrarMateria(Consulta);
+    }
 
     return 0;
 }
